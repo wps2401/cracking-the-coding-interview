@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run 1.1 (gdb)",
+      "name": "Run active C++ file (gdb)",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.exe",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
@@ -13,7 +13,7 @@
       "externalConsole": false,
       "MIMode": "gdb",
       "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
-      "preLaunchTask": "build 1.1.cpp"
+      "preLaunchTask": "build active file"
     }
   ]
 }

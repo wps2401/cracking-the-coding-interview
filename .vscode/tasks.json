@@ -2,19 +2,20 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build 1.1.cpp",
+      "label": "build active file",
       "type": "shell",
-      "command": "g++ -std=c++17 -O2 -Wall -Wextra -g \"${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.cpp\" -o \"${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.exe\"",
+      "command": "g++ -std=c++17 -O2 -Wall -Wextra -g \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}.exe\"",
       "group": { "kind": "build", "isDefault": true },
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
-      "problemMatcher": ["$gcc"]
+      "problemMatcher": ["$gcc"],
+      "detail": "Build the currently active C/C++ file"
     },
     {
-      "label": "run 1.1.exe",
+      "label": "run active exe",
       "type": "shell",
-      "command": "\"${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.exe\"",
+      "command": "\"${fileDirname}/${fileBasenameNoExtension}.exe\"",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
-      "dependsOn": "build 1.1.cpp"
+      "dependsOn": "build active file"
     }
   ]
 }

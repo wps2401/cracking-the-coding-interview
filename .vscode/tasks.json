@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build 1.1.cpp",
+      "type": "shell",
+      "command": "g++ -std=c++17 -O2 -Wall -Wextra -g \"${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.cpp\" -o \"${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.exe\"",
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "run 1.1.exe",
+      "type": "shell",
+      "command": "\"${workspaceFolder}/ch1_arrays_and_strings/1.1/1.1.exe\"",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "dependsOn": "build 1.1.cpp"
+    }
+  ]
+}

@@ -5,6 +5,26 @@
 #include <string>
 
 bool isPermutation(const std::string& inputString1, const std::string& inputString2){
+
+    //Lengths of input strings must be the same
+    if (inputString1.length() != inputString2.length()){
+        return false;
+    }
+
+    //Count occurences of chars in inputString1
+    std::unordered_map<char, int> charCountHashTable;
+    for (char c : inputString1) {
+        charCountHashTable[c]++;
+    }
+
+    //Count occurences of chars in inputString2 and check against inputString1
+    for (char c : inputString2) {
+        if (charCountHashTable.find(c) == charCountHashTable.end() || charCountHashTable[c] == 0) {
+            return false; //either char not found or used too many times
+        }
+        charCountHashTable[c]--;
+    }
+
     return true;
 }
 
